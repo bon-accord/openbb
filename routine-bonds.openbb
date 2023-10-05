@@ -1,0 +1,49 @@
+# OpenBB Routine Script That Takes Input Arguments
+
+# Usage: exe --file lewis-routine-bonds.openbb
+
+# ----------------------------------------------------
+# Start: go to fixedincome
+# ----------------------------------------------------
+
+/fixedincome
+
+# ----------------------------------------------------
+# Plot 10-year treasuries, bunds and gilts
+# ----------------------------------------------------
+
+hold on --sameaxis
+treasury --long united_states
+treasury --long germany
+treasury --long united_kingdom
+hold off
+
+# ----------------------------------------------------
+# Plot general rates
+# ----------------------------------------------------
+
+hold on --sameaxis
+sonia
+fed
+hold off
+
+# ----------------------------------------------------
+# Plot TIPS & TBills
+# ----------------------------------------------------
+
+hold on --sameaxis
+usrates --maturity 10_year --parameter tips
+usrates --maturity 1_year --parameter tbill
+hold off --title 10Y TIPS and 1Y TBill Rates
+
+# ----------------------------------------------------
+# Plot US yield curve
+# ----------------------------------------------------
+
+ycrv
+
+# ----------------------------------------------------
+# End
+# ----------------------------------------------------
+
+home

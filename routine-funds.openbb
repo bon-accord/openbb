@@ -1,0 +1,24 @@
+# OpenBB Routine Script
+
+# ----------------------------------------------------
+# Select /funds menu
+# ----------------------------------------------------
+
+/funds
+
+# ----------------------------------------------------
+# Select country
+# ----------------------------------------------------
+
+country --name united_kingdom
+
+# ----------------------------------------------------
+# Plot fund and compare to category and index
+# ----------------------------------------------------
+
+# Load MontLake DUNN WMA Institutional UCITS Fund EUR Retail Class
+load --fund F00000XACR --start 2003-01-01
+plot -c both
+
+# Return home
+home
