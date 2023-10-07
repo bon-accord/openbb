@@ -1,0 +1,35 @@
+# OpenBB Routine
+
+# ----------------------------------------------------
+# Start: go to futures
+# ----------------------------------------------------
+
+/futures
+
+# ----------------------------------------------------
+# Define list of tickers
+# ----------------------------------------------------
+
+# DX  = dollar index
+# GC  = gold
+# RP  = EUR/GBP
+# M6E = EUR/USD micro
+# M6B = GBP/USD micro
+# M6C = CAD/USD micro
+# BTC = bitcoin
+
+$TICKERS = DX,GC,RP,M6E,M6B,M6C,BTC
+
+# ----------------------------------------------------
+# Loop over tickers and display historical timeseries
+# ----------------------------------------------------
+
+foreach $$VAR in $TICKERS
+    historical --ticker $$VAR
+end
+
+# ----------------------------------------------------
+# Return home
+# ----------------------------------------------------
+
+home

@@ -20,5 +20,8 @@ country --name united_kingdom
 load --fund F00000XACR --start 2003-01-01
 plot -c both
 
+# ----------------------------------------------------
 # Return home
+# ----------------------------------------------------
+
 home

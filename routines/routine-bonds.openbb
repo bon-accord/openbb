@@ -1,6 +1,6 @@
 # OpenBB Routine Script That Takes Input Arguments
 
-# Usage: exe --file lewis-routine-bonds.openbb
+# Usage: exe --file routine-bonds.openbb
 
 # ----------------------------------------------------
 # Start: go to fixedincome
