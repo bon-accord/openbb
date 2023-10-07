@@ -14,7 +14,7 @@
 $TICKERS = RICA.L,YCA.L,BHMG.L,GLEN.L,URNP.L,GCL.L
 
 # ----------------------------------------------------
-# Loop over tickers and display historical timeseries
+# Loop over tickers and display technical analysis
 # ----------------------------------------------------
 
 foreach $$VAR in $TICKERS
