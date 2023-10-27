@@ -1,0 +1,81 @@
+# OpenBB Routine Script That Takes Input Arguments
+
+# Usage: exe --file routine-economy.openbb
+
+# ----------------------------------------------------
+# Start: go to economy
+# ----------------------------------------------------
+
+/economy
+
+# ----------------------------------------------------
+# Plot major UK indices
+# ----------------------------------------------------
+
+hold on
+index --indices ftse100
+index --indices uk_ftas
+hold off
+
+# ----------------------------------------------------
+# Compare UK with Europe
+# ----------------------------------------------------
+
+hold on
+index --indices ftse100 --start 2020-01-01
+index --indices eu_n100 --start 2020-01-01
+hold off
+
+# ----------------------------------------------------
+# Global indices
+# ----------------------------------------------------
+
+index --indices jp_n225
+index --indices hk_hsi
+
+# ----------------------------------------------------
+# Compare discretionary vs. staples
+# ----------------------------------------------------
+
+hold on
+index --indices sp_discretionary_sector --start 2020-01-01
+index --indices sp_staples_sector --start 2020-01-01
+hold off
+
+# ----------------------------------------------------
+# Plot general data
+# ----------------------------------------------------
+
+edebt
+valuation
+usdli
+cpi --countries united_kingdom,united_states
+rgdp --countries united_kingdom,united_states,germany --start 2020-01-01
+
+# ----------------------------------------------------
+# FRED Data
+# ----------------------------------------------------
+
+# Yield spreads for corporate & HY debt
+fred --parameter BAMLH0A0HYM2,BAMLC0A0CM --start 2021-01-01
+
+# 10Y - 2YR
+fred -p T10Y2Y
+
+# Unemployment
+fred -p UNRATE --start 1980-01-01
+
+# 10Y & 1Y yield constant maturity
+fred --parameter DGS10 --start 1990-01-01
+fred --parameter DGS1 --start 2022-01-01
+
+# 5Y break-even inflation expectations
+fred -p T5YIE --start 2020-07-01
+
+# Financial conditions index
+fred --parameter NFCI --start 2006-01-01
+
+# Consumer sentiment
+fred --parameter UMCSENT --start 2006-01-01
+
+home

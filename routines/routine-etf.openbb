@@ -1,0 +1,45 @@
+# OpenBB Routine
+
+# ----------------------------------------------------
+# Start: go to ETFs
+# ----------------------------------------------------
+
+/etf
+
+# ----------------------------------------------------
+# Show top gainers
+# ----------------------------------------------------
+
+/etf/disc/gainers
+
+# ----------------------------------------------------
+# Define list of tickers
+# ----------------------------------------------------
+
+# SPY  = SPDR S&P 500 ETF Trust
+# QQQ  = Invesco QQQ Trust
+# URA  = Global X Uranium ETF
+# IRBO = iShares Robotics and Artificial Intelligence Multisector ETF
+# DBMF = iM DBi Managed Futures Strategy ETF
+# FUT = ProShares Managed Futures Strategy ETF
+# SVOL = Simplify Volatility Premium ETF
+# QQC  = Simplify Growth Equity Plus Convexity ETF
+
+$TICKERS = SPY,QQQ,URA,IRBO,DBMF,FUT
+
+# ----------------------------------------------------
+# Loop over tickers and display historical timeseries
+# ----------------------------------------------------
+
+foreach $$VAR in $TICKERS
+    /etf
+    load --ticker $$VAR --start 2021-01-01
+    candle --ma 21,200
+    /etf/ta/fib
+end
+
+# ----------------------------------------------------
+# Return home
+# ----------------------------------------------------
+
+home

@@ -1,0 +1,30 @@
+# OpenBB Routine
+
+# ----------------------------------------------------
+# Define list of tickers
+# ----------------------------------------------------
+
+# RICA.L = Ruffer
+# YCA.L  = Yellow Cake
+# BHMG.L = BH Macro GBP
+# GLEN.L = Glencore
+# URNP.L = Sprott Uranium Miners UCITS ETF
+# GCL.L  = Geiger Counter
+
+$TICKERS = RICA.L,YCA.L,BHMG.L,GLEN.L,URNP.L,GCL.L
+
+# ----------------------------------------------------
+# Loop over tickers and display technical analysis
+# ----------------------------------------------------
+
+foreach $$VAR in $TICKERS
+    /stocks
+    load --ticker $$VAR --start 2021-01-01
+    /stocks/ta/multi -i zlma[50,200],fib,rsi,obv
+end
+
+# ----------------------------------------------------
+# Return home
+# ----------------------------------------------------
+
+home

@@ -1,0 +1,38 @@
+# OpenBB Routine
+
+# ----------------------------------------------------
+# Start: go to futures
+# ----------------------------------------------------
+
+/futures
+
+# ----------------------------------------------------
+# Define list of tickers
+# ----------------------------------------------------
+
+# BZ  = crude oil
+# GC  = gold
+# HG  = copper
+# ALI = aluminium
+# ZC  = corn
+# GD  = S&P GSCI Commodity Index Futures
+# PL  = platinum
+# PA  = palladium 
+# CC  = cocoa
+# KC  = coffee
+
+$TICKERS = BZ,GC,HG,ALI,ZC,GD,PL,PA,CC,KC
+
+# ----------------------------------------------------
+# Loop over tickers and display historical timeseries
+# ----------------------------------------------------
+
+foreach $$VAR in $TICKERS
+    historical --ticker $$VAR
+end
+
+# ----------------------------------------------------
+# Return home
+# ----------------------------------------------------
+
+home
